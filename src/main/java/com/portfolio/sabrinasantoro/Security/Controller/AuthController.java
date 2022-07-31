@@ -1,5 +1,6 @@
 package com.portfolio.sabrinasantoro.Security.Controller;
 
+
 import com.portfolio.sabrinasantoro.Security.Dto.JwtDto;
 import com.portfolio.sabrinasantoro.Security.Dto.LoginUsuario;
 import com.portfolio.sabrinasantoro.Security.Dto.NuevoUsuario;
@@ -30,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = {"https://portfoliosantoro.web.app"","http://localhost:4200"})
+@CrossOrigin(origins = {"https://portfoliosantoro.web.app", "http://localhost:4200"})
 public class AuthController {
 
     @Autowired
