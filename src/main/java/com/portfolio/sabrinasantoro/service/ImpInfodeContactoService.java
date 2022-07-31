@@ -4,11 +4,13 @@ package com.portfolio.sabrinasantoro.service;
 import com.portfolio.sabrinasantoro.Model.InformaciondeContacto;
 import com.portfolio.sabrinasantoro.Repo.IInfodeContactoRepo;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ImpInfodeContactoService implements IinformaciondeContactoService {
     
+    @Autowired    
     public IInfodeContactoRepo IInfodeContactoRepo;
         
     @Override

@@ -4,11 +4,13 @@ package com.portfolio.sabrinasantoro.service;
 import com.portfolio.sabrinasantoro.Model.Acercade;
 import com.portfolio.sabrinasantoro.Repo.IAcercadeRepo;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ImpAcercaDeService implements IAcercadeService{
  
+ @Autowired    
  public IAcercadeRepo IAcercadeRepo;
 
     

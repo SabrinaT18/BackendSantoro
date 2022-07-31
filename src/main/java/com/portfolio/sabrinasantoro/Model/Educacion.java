@@ -17,7 +17,7 @@ public class Educacion {
 
     private String SchoolName;
 
-    private String Título;
+    private String Titulo;
 
     private Date FechaInicio;
 
@@ -30,10 +30,10 @@ public class Educacion {
     public Educacion() {
     }
 
-    public Educacion(Long idEd, String SchoolName, String Título, Date FechaInicio, Date FechaFin, String Promedio, String Tipo_estudio) {
+    public Educacion(Long idEd, String SchoolName, String Titulo, Date FechaInicio, Date FechaFin, String Promedio, String Tipo_estudio) {
         this.idEd = idEd;
         this.SchoolName = SchoolName;
-        this.Título = Título;
+        this.Titulo = Titulo;
         this.FechaInicio = FechaInicio;
         this.FechaFin = FechaFin;
         this.Promedio = Promedio;
@@ -56,12 +56,12 @@ public class Educacion {
         this.SchoolName = SchoolName;
     }
 
-    public String getTítulo() {
-        return Título;
+    public String getTitulo() {
+        return Titulo;
     }
 
-    public void setTítulo(String Título) {
-        this.Título = Título;
+    public void setTitulo(String Titulo) {
+        this.Titulo = Titulo;
     }
 
     public Date getFechaInicio() {

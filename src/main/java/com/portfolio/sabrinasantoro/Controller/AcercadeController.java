@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/1/Acercade")
+@RequestMapping("/api/Acercade")
 @CrossOrigin(origins = {"https://portfoliosantoro.web.app", "http://localhost:4200"})
 public class AcercadeController {
 

@@ -4,11 +4,13 @@ package com.portfolio.sabrinasantoro.service;
 import com.portfolio.sabrinasantoro.Repo.IProyectosRepo;
 import com.portfolio.sabrinasantoro.Model.Proyectos;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ImpProyectosService implements IProyectosService {
  
+    @Autowired
     public IProyectosRepo IProyectosRepo;
    
     

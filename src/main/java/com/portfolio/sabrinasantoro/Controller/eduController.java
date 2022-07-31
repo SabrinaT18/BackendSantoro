@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/1/educacion")
+@RequestMapping("/api/educacion")
 @CrossOrigin (origins = {"https://portfoliosantoro.web.app", "http://localhost:4200"})
 public class eduController {
     @Autowired 
@@ -56,7 +56,7 @@ public String addEducacion (@RequestBody Educacion educacion){
          
  Educacion educacion =   IeducacionService.findEducacion (idEd);
  educacion.setSchoolName (newSchoolName);
- educacion.setTítulo (nuevoTítulo);
+ educacion.setTitulo (nuevoTítulo);
  educacion.setFechaInicio (nuevaFechaInicio);
  educacion.setFechaFin (nuevaFechaFin);
  educacion.setPromedio (nuevoPromedio);
