@@ -11,33 +11,35 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/1/Acercade")
 @CrossOrigin(origins = {"https://portfoliosantoro.web.app", "http://localhost:4200"})
 public class AcercadeController {
 
     @Autowired
     IAcercadeService IAcercadeService;
 
-    @GetMapping("/Acercade/traer")
+    @GetMapping("/traer")
     public List<Acercade> getAcercade() {
         return IAcercadeService.getAcercade();
     }
 
-    @PostMapping("/Acercade/crear")
+    @PostMapping("/crear")
     public String createAcercade(@RequestBody Acercade Acercade) {
         IAcercadeService.saveAcercade(Acercade);
         return "La persona fue creada correctamente";
     }
 
-    @DeleteMapping("/Acercade/borrar/{id}")
+    @DeleteMapping("/borrar/{id}")
     public void deleteAcercade(@PathVariable Long idA) {
         IAcercadeService.deleteAcercade(idA);
     }
 
-    @PutMapping("/Acercade/editar/{id}")
+    @PutMapping("/editar/{id}")
     public Acercade editAcercade(@PathVariable Long idA,
             @RequestParam("acercade") String nuevoAcercade
     ) {

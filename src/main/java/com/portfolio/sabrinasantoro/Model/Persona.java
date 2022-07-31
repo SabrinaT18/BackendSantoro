@@ -1,6 +1,5 @@
 package com.portfolio.sabrinasantoro.Model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -110,38 +109,6 @@ public class Persona  {
 
     public void setCompany(String company) {
         this.company = company;
-    }
-
-    public List<Experiencia_laboral> getExperiencia() {
-        return experiencia;
-    }
-
-    public void setExperiencia(List<Experiencia_laboral> experiencia) {
-        this.experiencia = experiencia;
-    }
-
-    public List<Educacion> getEducacion() {
-        return educacion;
-    }
-
-    public void setEducacion(List<Educacion> educacion) {
-        this.educacion = educacion;
-    }
-
-    public List<Skills> getSkills() {
-        return skills;
-    }
-
-    public void setSkills(List<Skills> skills) {
-        this.skills = skills;
-    }
-
-    public List<Proyectos> getProyectos() {
-        return proyectos;
-    }
-
-    public void setProyectos(List<Proyectos> proyectos) {
-        this.proyectos = proyectos;
     }
 
     public Encabezado getEncabezado() {

@@ -12,33 +12,35 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/1/infodecontacto")
 @CrossOrigin (origins = {"https://portfoliosantoro.web.app", "http://localhost:4200"})
 public class InfoContactoController {
     
   @Autowired 
         IinformaciondeContactoService IinformaciondeContactoService ;
 
-@GetMapping ("/infodecontacto/traer")
+@GetMapping ("/traer")
 public List <InformaciondeContacto> getinformaciondeContacto () {
     return IinformaciondeContactoService.getinformaciondeContacto();
 }
     
-@PostMapping("/infodecontacto/crear")
+@PostMapping("/crear")
 public String createinformaciondeContacto (@RequestBody InformaciondeContacto infodeContacto){
     IinformaciondeContactoService.saveinformaciondeContacto (infodeContacto);
     return "La información de contacto fue creada correctamente";
     }
 
- @DeleteMapping ("/infodecontacto/borrar/{idCont}")
+ @DeleteMapping ("/borrar/{idCont}")
  public void deleteinformaciondeContacto (@PathVariable Long idCont){
  IinformaciondeContactoService.deleteinformaciondeContacto(idCont);
  } 
    
- @PutMapping ("/infodecontacto/editar/{idCont}")
+ @PutMapping ("/editar/{idCont}")
  public InformaciondeContacto editinformaciondeContacto (@PathVariable Long idCont,
          @RequestParam ("Email") String nuevoEmail,
          @RequestParam ("Teléfono")String nuevoTeléfono,

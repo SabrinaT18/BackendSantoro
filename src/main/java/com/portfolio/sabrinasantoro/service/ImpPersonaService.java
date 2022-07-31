@@ -14,12 +14,11 @@ public class ImpPersonaService implements IPersonaService {
 IPersonaRepository IPersoRepo;
    
     
-    @Override
-    public List<Persona> getPersona() {
-        List<Persona> persona = IPersoRepo.findAll();
-    return persona; 
+   @Override
+   public Persona getPersona(Long id) {
+   return IPersoRepo.findById(id).orElse(null); 
     }
-
+      
     @Override
     public void savePersona(Persona persona) {
     IPersoRepo.save(persona);
