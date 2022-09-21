@@ -78,10 +78,9 @@ public class AuthController {
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return new ResponseEntity(new Mensaje("Campos mal puestos"), HttpStatus.BAD_REQUEST);
-        }
-
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
+     
+       Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+       loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
