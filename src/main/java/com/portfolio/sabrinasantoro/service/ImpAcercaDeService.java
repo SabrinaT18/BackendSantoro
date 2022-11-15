@@ -20,11 +20,11 @@ public class ImpAcercaDeService implements IAcercadeService{
     return Acercade;
     }
 
-    @Override
-    public void saveAcercade(Acercade Acercade) {
-         IAcercadeRepo.save(Acercade);
-        
+     @Override
+    public Acercade saveAcercade(Acercade Acercade) {
+    return  IAcercadeRepo.save(Acercade);
     }
+
 
     @Override
     public void deleteAcercade(Long id) {
