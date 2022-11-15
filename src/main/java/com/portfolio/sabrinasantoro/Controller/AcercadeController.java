@@ -42,16 +42,10 @@ public class AcercadeController {
         IAcercadeService.deleteAcercade(idA);
     }
 
-    @PutMapping("/editar/{id}")
-    public Acercade editAcercade(@PathVariable Long idA,
-            @RequestParam("acercade") String nuevoAcercade
-    ) {
-
-        Acercade Acercade = IAcercadeService.findAcercade(idA);
-
-        Acercade.setAcercade(nuevoAcercade);
-
-        IAcercadeService.saveAcercade(Acercade);
-        return Acercade;
-    }
+  @PreAuthorize("hasRole('ADMIN')")
+  @PutMapping("/editar")
+  public ResponseEntity<Acercade> saveAcercade(@RequestBody Acercade acercade) {
+  Acercade updateAcercaDe = IAcercadeService.saveAcercade(acercade);
+  return new ResponseEntity<>(updateAcercaDe, HttpStatus.OK);
+}   
 }
