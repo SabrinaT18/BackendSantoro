@@ -33,10 +33,9 @@ public class ImpAcercaDeService implements IAcercadeService{
     }
 
     @Override
-    public Acercade findAcercade(Long id) {
-     return IAcercadeRepo.findById(id).orElse(null);
-      
-     }
+    public List<Acercade> findAcercade() {
+     return IAcercadeRepo.findAll();
+    }
 }
     
 
