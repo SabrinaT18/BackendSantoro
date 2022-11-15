@@ -12,7 +12,7 @@ public interface IAcercadeService {
    
     public List <Acercade> getAcercade ();
     
-    public void saveAcercade (Acercade Acercade);
+    public Acercade saveAcercade (Acercade Acercade);
     
     public void deleteAcercade (Long idA);
             
