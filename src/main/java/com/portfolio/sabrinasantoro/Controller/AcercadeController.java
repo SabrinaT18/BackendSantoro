@@ -42,7 +42,6 @@ public class AcercadeController {
         IAcercadeService.deleteAcercade(idA);
     }
 
-  @PreAuthorize("hasRole('ADMIN')")
   @PutMapping("/editar")
   public ResponseEntity<Acercade> saveAcercade(@RequestBody Acercade acercade) {
   Acercade updateAcercaDe = IAcercadeService.saveAcercade(acercade);
