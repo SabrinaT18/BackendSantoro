@@ -24,14 +24,15 @@ public class AcercadeController {
     IAcercadeService IAcercadeService;
 
     @GetMapping("/traer")
-    public List<Acercade> getAcercade() {
-        return IAcercadeService.getAcercade();
+    public ResponseEntity <List<Acercade>> getAcercade(){
+        List<Acercade> acercaDe = IAcercadeService.findAcercade();
+        return new ResponseEntity<>(acercaDe, HttpStatus.OK);
     }
 
     @PostMapping("/crear")
     public String createAcercade(@RequestBody Acercade Acercade) {
         IAcercadeService.saveAcercade(Acercade);
-        return "La persona fue creada correctamente";
+        return "Creado correctamente";
     }
 
     @DeleteMapping("/borrar/{id}")
