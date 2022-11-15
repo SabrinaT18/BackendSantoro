@@ -16,6 +16,6 @@ public interface IAcercadeService {
     
     public void deleteAcercade (Long idA);
             
-    public List <Acercade> findAcercade (); 
+   public List<Acercade> findAcercade();
     
 }
