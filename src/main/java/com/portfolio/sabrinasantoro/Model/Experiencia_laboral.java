@@ -62,7 +62,7 @@ public class Experiencia_laboral {
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripción = descripcion;
+        this.descripcion = descripcion;
     }
 
     public Date getFechaInicio() {
