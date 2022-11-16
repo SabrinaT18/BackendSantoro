@@ -13,7 +13,7 @@ public interface IPersonaService {
             
     public Persona findPersona (Long id);
     
-    public Persona getPersona (Long id);
+    public List <Persona> getPersona ();
      }
 
 
