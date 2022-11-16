@@ -15,10 +15,10 @@ IPersonaRepository IPersoRepo;
    
     
    @Override
-   public Persona getPersona(Long id) {
-   return IPersoRepo.findById(id).orElse(null); 
+   public List<Persona> getPersona() {
+   return IPersoRepo.findAll(); 
     }
-      
+            
     @Override
     public void savePersona(Persona persona) {
     IPersoRepo.save(persona);
