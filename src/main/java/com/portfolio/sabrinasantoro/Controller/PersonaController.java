@@ -27,10 +27,9 @@ public class PersonaController {
 @Autowired 
 private IPersonaService IPersoService ;
  
-@GetMapping ("/traer/{id}")
-public ResponseEntity <Persona> getPersona (@PathVariable("id") Long id){
-     Persona persona=IPersoService.getPersona(id);
-     return new ResponseEntity <> (persona, HttpStatus.OK);
+@GetMapping ("/traer")
+public List <Persona> getPersona(){
+ return IPersoService.getPersona();
 }
     
 @PostMapping("/crear")
