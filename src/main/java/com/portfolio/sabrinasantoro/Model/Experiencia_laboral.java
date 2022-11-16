@@ -18,7 +18,7 @@ public class Experiencia_laboral {
    
    private String NombreEmpresa;
     
-   private String descripción;
+   private String descripcion;
     
    private Date FechaInicio;
     
@@ -31,10 +31,10 @@ public class Experiencia_laboral {
     public Experiencia_laboral() {
     }
 
-    public Experiencia_laboral(Long idExp, String NombreEmpresa, String descripción, Date FechaInicio, Date FechaFin, boolean esTrabajoActual, String tipo_empleo) {
+    public Experiencia_laboral(Long idExp, String NombreEmpresa, String descripcion, Date FechaInicio, Date FechaFin, boolean esTrabajoActual, String tipo_empleo) {
         this.idExp = idExp;
         this.NombreEmpresa = NombreEmpresa;
-        this.descripción = descripción;
+        this.descripcion = descripcion;
         this.FechaInicio = FechaInicio;
         this.FechaFin = FechaFin;
         this.esTrabajoActual = esTrabajoActual;
@@ -57,12 +57,12 @@ public class Experiencia_laboral {
         this.NombreEmpresa = NombreEmpresa;
     }
 
-    public String getDescripción() {
-        return descripción;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescripción(String descripción) {
-        this.descripción = descripción;
+    public void setDescripcion(String descripcion) {
+        this.descripción = descripcion;
     }
 
     public Date getFechaInicio() {
