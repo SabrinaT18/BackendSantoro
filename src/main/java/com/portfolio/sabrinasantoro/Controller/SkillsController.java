@@ -31,10 +31,10 @@ public class SkillsController {
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
-    @PostMapping("/crear")
-    public String createSkills(@RequestBody Skills Skills) {
-        ISkills_Service.saveSkills(Skills);
-        return "La habilidad fue creada correctamente";
+       @PostMapping("/crear")
+        public ResponseEntity <Skills> createSkills (@RequestBody Skills skills){
+        Skills newSkills=ISkills_Service.addSkills(skills);
+        return new ResponseEntity<>(newSkills,HttpStatus.CREATED);
     }
 
     @DeleteMapping("/borrar/{idS}")
