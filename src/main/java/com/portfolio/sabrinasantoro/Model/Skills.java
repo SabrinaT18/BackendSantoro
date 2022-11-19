@@ -50,8 +50,8 @@ public class Skills {
         return SkillsPorcentaje;
     }
 
-    public void setSkillsPorcentaje(Number SkillsPorcentaje) {
-        this.SkillsPorcentaje = (int) SkillsPorcentaje;
+    public void setSkillsPorcentaje(int  SkillsPorcentaje) {
+        this.SkillsPorcentaje = SkillsPorcentaje;
     }
     
 }
