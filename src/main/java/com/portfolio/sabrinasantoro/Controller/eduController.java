@@ -44,29 +44,13 @@ public String addEducacion (@RequestBody Educacion educacion){
  
  } 
  
- @PutMapping ("/editar/{idEd}")
- public Educacion editarEducacion (@PathVariable Long idEd,
-         @RequestParam ("SchoolName") String newSchoolName,
-         @RequestParam ("Título")String nuevoTítulo,
-         @RequestParam ("FechaInicio")Date nuevaFechaInicio,
-         @RequestParam ("FechaFin")Date nuevaFechaFin,
-         @RequestParam ("Promedio")String nuevoPromedio,
-         @RequestParam ("tipo_estudio")String nuevoTipo_estudio
-         ){
-         
- Educacion educacion =   IeducacionService.findEducacion (idEd);
- educacion.setSchoolName (newSchoolName);
- educacion.setTitulo (nuevoTítulo);
- educacion.setFechaInicio (nuevaFechaInicio);
- educacion.setFechaFin (nuevaFechaFin);
- educacion.setPromedio (nuevoPromedio);
- educacion.setTipo_estudio (nuevoTipo_estudio);
+ @PutMapping("/editar")
+  public ResponseEntity<Educacion> editarEducacion(@RequestBody Educacion educacion){
+  Educacion updateEducacion=IeducacionService.editarEducacion(educacion);
+  return new ResponseEntity<>(updateEducacion,HttpStatus.OK);
+}
 
- 
- 
- IeducacionService.saveEducacion(educacion);
- return educacion;
-}} 
+} 
     
     
     
