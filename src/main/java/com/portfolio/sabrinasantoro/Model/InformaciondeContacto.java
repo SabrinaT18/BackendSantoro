@@ -20,7 +20,7 @@ public class InformaciondeContacto {
     private String Email;
     
     @NotNull
-    private String Teléfono;
+    private String Telefono;
     
     private String DNI;
     
@@ -29,10 +29,10 @@ public class InformaciondeContacto {
     public InformaciondeContacto() {
     }
 
-    public InformaciondeContacto(Long idCont, String Email, String Teléfono, String DNI, String Domicilio) {
+    public InformaciondeContacto(Long idCont, String Email, String Telefono, String DNI, String Domicilio) {
         this.idCont = idCont;
         this.Email = Email;
-        this.Teléfono = Teléfono;
+        this.Telefono = Telefono;
         this.DNI = DNI;
         this.Domicilio = Domicilio;
     }
@@ -53,12 +53,12 @@ public class InformaciondeContacto {
         this.Email = Email;
     }
 
-    public String getTeléfono() {
-        return Teléfono;
+    public String getTelefono() {
+        return Telefono;
     }
 
-    public void setTeléfono(String Teléfono) {
-        this.Teléfono = Teléfono;
+    public void setTelefono(String Telefono) {
+        this.Telefono = Telefono;
     }
 
     public String getDNI() {
