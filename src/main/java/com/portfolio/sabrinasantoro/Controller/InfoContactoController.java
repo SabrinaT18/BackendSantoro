@@ -5,6 +5,8 @@ import com.portfolio.sabrinasantoro.Model.InformaciondeContacto;
 import com.portfolio.sabrinasantoro.service.IinformaciondeContactoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,24 +41,15 @@ public String createinformaciondeContacto (@RequestBody InformaciondeContacto in
  public void deleteinformaciondeContacto (@PathVariable Long idCont){
  IinformaciondeContactoService.deleteinformaciondeContacto(idCont);
  } 
+    
    
- @PutMapping ("/editar/{idCont}")
- public InformaciondeContacto editinformaciondeContacto (@PathVariable Long idCont,
-         @RequestParam ("Email") String nuevoEmail,
-         @RequestParam ("Teléfono")String nuevoTeléfono,
-         @RequestParam ("DNI")String nuevoDNI,
-         @RequestParam ("Domicilio")String nuevoDomicilio
-         ){
-         
-   InformaciondeContacto informaciondeContacto =   IinformaciondeContactoService.findinformaciondeContacto (idCont);
- informaciondeContacto.setEmail (nuevoEmail);
- informaciondeContacto.setTeléfono (nuevoTeléfono);
- informaciondeContacto.setDNI (nuevoDNI);
- informaciondeContacto.setDomicilio (nuevoDomicilio);
- 
- IinformaciondeContactoService.saveinformaciondeContacto (informaciondeContacto);
- return informaciondeContacto;
-}}  
+@PutMapping("/editar")
+public ResponseEntity<InformaciondeContacto> editInformaciondeContacto(@RequestBody InformaciondeContacto infodeContacto) {
+        InformaciondeContacto updateInformaciondeContacto = IinformaciondeContactoService.editInformaciondeContacto(infodeContacto);
+        return new ResponseEntity<>(updateInformaciondeContacto, HttpStatus.OK);
+    }
+
+}  
     
     
     
