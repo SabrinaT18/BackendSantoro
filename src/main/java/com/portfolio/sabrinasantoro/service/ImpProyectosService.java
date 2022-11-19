@@ -33,9 +33,8 @@ public class ImpProyectosService implements IProyectosService {
     }
 
     @Override
-    public Proyectos findProyectos(Long id) {
-    return IProyectosRepo.findById(id).orElse(null);
-   
-    }
+    public Proyectos editProyecto(Proyectos proyecto) {
+    return IProyectosRepo.save(proyecto);
+         }
     
 }
