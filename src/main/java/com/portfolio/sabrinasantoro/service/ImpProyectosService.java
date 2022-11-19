@@ -36,5 +36,10 @@ public class ImpProyectosService implements IProyectosService {
     public Proyectos editProyecto(Proyectos proyecto) {
     return IProyectosRepo.save(proyecto);
          }
+ 
+   @Override
+   public Proyectos addProyectos(Proyectos proyecto){
+   return IProyectosRepo.save(proyecto);
+      }
     
 }
