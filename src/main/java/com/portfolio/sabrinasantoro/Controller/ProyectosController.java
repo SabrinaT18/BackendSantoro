@@ -49,23 +49,10 @@ public class ProyectosController {
  IProyectosService.deleteProyecto(idPro);
         }
 
-        @PutMapping("/editar/{idPro}")
-        public Proyectos editProyectos (@PathVariable
-        Long idPro,
-         @RequestParam ("ProyectosName") String nuevoProyectosName,
-         @RequestParam ("DescribeProyect")
-        String nuevoDescribeProyect,
-         @RequestParam ("FechaProyecto")
-        Date nuevaFechaProyecto
-        
-            ){
-         
-   Proyectos proyectos = IProyectosService.findProyectos(idPro);
-            proyectos.setProyectosName(nuevoProyectosName);
-            proyectos.setDescribeProyect(nuevoDescribeProyect);
-            proyectos.setFechaProyecto(nuevaFechaProyecto);
-
-            IProyectosService.saveProyectos(proyectos);
-            return proyectos;
-        }
+  @PutMapping("/editar")
+    public ResponseEntity<Proyectos> editProyecto(@RequestBody Proyectos proyectos) {
+        Proyectos updateProyectos = IProyectosService.editProyecto(proyectos);
+        return new ResponseEntity<>(updateProyectos, HttpStatus.OK);
+    }
+    
     }
