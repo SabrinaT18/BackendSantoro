@@ -43,23 +43,10 @@ public String savePersona (@RequestBody Persona persona){
  IPersoService.deletePersona(id);
  } 
    
- @PutMapping ("/editar/{id}")
- public Persona editPersona (@PathVariable Long id,
-         @RequestParam ("nombre") String nuevoNombre,
-         @RequestParam ("Apellido")String nuevoApellido,
-         @RequestParam ("Img")String nuevaImg,
-         @RequestParam ("company")String nuevaCompany
-            ){
-         
- Persona persona =   IPersoService.findPersona (id);
- persona.setNombre (nuevoNombre);
- persona.setApellido (nuevoApellido);
- persona.setImg (nuevaImg);
- persona.setCompany (nuevaCompany);
-
- 
- 
- IPersoService.savePersona (persona);
- return persona;
-}}
+ @PutMapping("/editar")
+  public ResponseEntity<Persona> editPersona(@RequestBody Persona persona) {
+  Persona updatePersona = IPersoService.editPersona(persona);
+  return new ResponseEntity<>(updatePersona, HttpStatus.OK);
+}  
+}
 
