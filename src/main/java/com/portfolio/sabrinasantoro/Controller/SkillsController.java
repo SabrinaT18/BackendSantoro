@@ -42,17 +42,10 @@ public class SkillsController {
         ISkills_Service.deleteSkills(idS);
     }
 
-    @PutMapping("/editar/{id}")
-    public Skills editSkills(@PathVariable Long idS,
-            @RequestParam("SkillsName") String nuevoSkillsName,
-            @RequestParam("SkillsPorcentaje") Number nuevoSkillsPorcentaje
-    ) {
-
-        Skills Skills = ISkills_Service.findSkills(idS);
-        Skills.setSkillsName(nuevoSkillsName);
-        Skills.setSkillsPorcentaje(nuevoSkillsPorcentaje);
-
-        ISkills_Service.saveSkills(Skills);
-        return Skills;
-    }
+ @PutMapping("/editar")
+     public ResponseEntity<Skills> editSkills(@RequestBody Skills Skills){
+        Skills updateSkills=ISkills_Service.editSkills(Skills);
+        return new ResponseEntity<>(updateSkills,HttpStatus.OK);
+}
+    
 }
