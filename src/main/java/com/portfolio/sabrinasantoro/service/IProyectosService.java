@@ -14,6 +14,8 @@ public interface IProyectosService {
    public void deleteProyecto (Long idPro);
             
    public Proyectos editProyecto (Proyectos proyectos);
+  
+   public Proyectos addProyectos(Proyectos proyectos);
 
     
 }
