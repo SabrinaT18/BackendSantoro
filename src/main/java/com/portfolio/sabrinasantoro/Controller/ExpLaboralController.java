@@ -30,10 +30,10 @@ public class ExpLaboralController {
         return new ResponseEntity(experiencias, HttpStatus.OK);
     }
 
-    @PostMapping("/crear")
-    public String createExperiencia_laboral(@RequestBody Experiencia_laboral experiencia_laboral) {
-        IExpLaboralService.addExperiencia_laboral(experiencia_laboral);
-        return "La experiencia laboral fue creada correctamente";
+ @PostMapping("/crear")
+        public ResponseEntity <Experiencia_laboral> createExperiencia_laboral (@RequestBody Experiencia_laboral experiencia_laboral){
+        Experiencia_laboral newExperiencia_laboral=IExpLaboralService.addExperiencia_laboral(experiencia_laboral);
+        return new ResponseEntity<>(newExperiencia_laboral,HttpStatus.CREATED);
     }
 
     @DeleteMapping("/borrar/{idExp}")
