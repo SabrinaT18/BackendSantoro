@@ -13,7 +13,7 @@ public interface IeducacionService {
       
     public void deleteEducacion (Long idEd);
             
-    public Educacion findEducacion (Long idEd);
+    public Educacion editarEducacion(Educacion educacion);
 
     public void saveEducacion(Educacion educacion);
     
