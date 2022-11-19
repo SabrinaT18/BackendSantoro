@@ -33,5 +33,10 @@ public class ImpSkillsService implements ISkills_Service {
     public Skills editSkills (Skills Skills) {
     return ISkillsRepo.save(Skills);
      }
+    
+  @Override
+   public Skills addSkills(Skills Skills){
+   return ISkillsRepo.save(Skills);
+      }    
 
 }
