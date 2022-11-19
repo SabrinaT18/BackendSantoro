@@ -5,6 +5,8 @@ import com.portfolio.sabrinasantoro.Model.Encabezado;
 import com.portfolio.sabrinasantoro.service.IEncabezadoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("/api/encabezado")
@@ -40,23 +43,12 @@ public String createEncabezado (@RequestBody Encabezado encabezado){
  IEncabezadoService.deleteEncabezado(idH);
  } 
    
- @PutMapping ("/editar/{id}")
- public Encabezado editEncabezado (@PathVariable Long idH,
-         @RequestParam ("backImage") String nuevabackImage,
-         @RequestParam ("Linkedin")String nuevoLinkedin,
-         @RequestParam ("Facebook")String nuevoFacebook ,
-         @RequestParam ("Instagram")String nuevoInstagram
-         ){
-         
-   Encabezado encabezado =   IEncabezadoService.findEncabezado (idH);
- encabezado.setBackImage (nuevabackImage);
- encabezado.setLinkedin (nuevoLinkedin);
- encabezado.setFacebook (nuevoFacebook);
- encabezado.setInstagram (nuevoInstagram);
- 
- IEncabezadoService.saveEncabezado (encabezado);
- return encabezado;
+ @PutMapping("/editar")
+public ResponseEntity<Encabezado> editEncabezado(@RequestBody Encabezado encabezado){
+ Encabezado updateEncabezado=IEncabezadoService.editEncabezado(encabezado);
+ return new ResponseEntity<>(updateEncabezado, HttpStatus.OK);
 }
+    
     
 }
 
