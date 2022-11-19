@@ -33,9 +33,8 @@ public class ImpEncabezadoService implements IEncabezadoService {
     IEncabezadoRepo.deleteById(id);
     }
 
-    @Override
-    public Encabezado findEncabezado(Long id) {
-    return IEncabezadoRepo.findById(id).orElse(null);
-   
+      @Override
+    public Encabezado  editEncabezado(Encabezado encabezado) {
+    return IEncabezadoRepo.save(encabezado);
     }
 }
