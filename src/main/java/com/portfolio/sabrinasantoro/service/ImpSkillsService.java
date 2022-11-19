@@ -29,9 +29,9 @@ public class ImpSkillsService implements ISkills_Service {
 
     }
 
-    @Override
-    public Skills findSkills(Long id) {
-        return ISkillsRepo.findById(id).orElse(null);
-    }
+  @Override
+    public Skills editSkills (Skills Skills) {
+    return ISkillsRepo.save(Skills);
+     }
 
 }
