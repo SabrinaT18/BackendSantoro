@@ -13,7 +13,7 @@ public interface IProyectosService {
     
    public void deleteProyecto (Long idPro);
             
-   public Proyectos findProyectos (Long idPro);
+   public Proyectos editProyecto (Proyectos proyectos);
 
     
 }
