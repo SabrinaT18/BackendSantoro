@@ -31,9 +31,8 @@ IPersonaRepository IPersoRepo;
     }
 
     @Override
-    public Persona findPersona(Long id) {
-    return IPersoRepo.findById(id).orElse(null);
-   
+    public Persona editPersona(Persona persona) {
+    return IPersoRepo.save(persona);
     }
 }
 
