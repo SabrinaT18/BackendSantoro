@@ -14,6 +14,6 @@ public interface ISkills_Service {
     
     public void deleteSkills (Long idS);
             
-    public Skills findSkills (Long idS);
+    public Skills editSkills(Skills Skills);
 
 }
