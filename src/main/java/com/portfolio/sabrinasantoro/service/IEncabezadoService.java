@@ -14,6 +14,6 @@ public interface IEncabezadoService {
     
     public void deleteEncabezado (Long idH);
             
-    public Encabezado findEncabezado (Long idH);
+    public Encabezado editEncabezado(Encabezado Encabezado);
 
 }
