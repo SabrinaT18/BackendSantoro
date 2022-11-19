@@ -16,4 +16,6 @@ public interface ISkills_Service {
             
     public Skills editSkills(Skills Skills);
 
+    public Skills addSkills(Skills Skills);
+
 }
