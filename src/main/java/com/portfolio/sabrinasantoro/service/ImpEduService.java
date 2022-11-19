@@ -32,9 +32,9 @@ public class ImpEduService implements IeducacionService {
          
     }
 
-    @Override
-    public Educacion findEducacion(Long idEd) {
-     return IEduRepo.findById(idEd).orElse(null);
+      @Override
+    public Educacion editarEducacion(Educacion educacion) {
+    return IEduRepo.save(educacion);
     }
 
     @Override
