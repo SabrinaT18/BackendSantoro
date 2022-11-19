@@ -15,7 +15,7 @@ public interface IinformaciondeContactoService {
     
     public void deleteinformaciondeContacto (Long idCont);
             
-    public InformaciondeContacto findinformaciondeContacto (Long idCont);
+    public InformaciondeContacto editInformaciondeContacto (InformaciondeContacto infodeContacto);
 
     
 }
