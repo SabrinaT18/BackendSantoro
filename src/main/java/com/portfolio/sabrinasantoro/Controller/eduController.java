@@ -33,9 +33,9 @@ public ResponseEntity <List<Educacion>> getEducacion () {
 }
     
  @PostMapping("/crear")
-public String addEducacion (@RequestBody Educacion educacion){
-    IeducacionService.addEducacion(educacion);
-    return "La educación fue creada correctamente";
+        public ResponseEntity <Educacion> addEducacion (@RequestBody Educacion educacion){
+        Educacion newEducacion=IeducacionService.addEducacion(educacion);
+        return new ResponseEntity<>(newEducacion,HttpStatus.CREATED);
     }
 
  @DeleteMapping ("/borrar/{idEd}")
