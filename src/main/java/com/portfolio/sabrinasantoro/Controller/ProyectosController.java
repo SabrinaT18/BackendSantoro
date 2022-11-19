@@ -32,22 +32,19 @@ public class ProyectosController {
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
-        @PostMapping("/crear")
-        public String createProyectos (@RequestBody
-        Proyectos proyectos
-        
-            ){
-    IProyectosService.saveProyectos(proyectos);
-            return "El proyecto fue creado correctamente";
-        }
+  @PostMapping("/crear")
+    public ResponseEntity <Proyectos> createProyectos(@RequestBody Proyectos proyecto){
+        Proyectos newProyecto=IProyectosService.addProyectos(proyecto);
+        return new ResponseEntity<>(newProyecto,HttpStatus.CREATED);
+    }
+    
 
-        @DeleteMapping("/borrar/{idPro}")
-        public void deleteProyecto (@PathVariable
-        Long idPro
-        
-            ){
+@DeleteMapping("/borrar/{idPro}")
+ public void deleteProyecto (@PathVariable
+  Long idPro ){
  IProyectosService.deleteProyecto(idPro);
         }
+    
 
   @PutMapping("/editar")
     public ResponseEntity<Proyectos> editProyecto(@RequestBody Proyectos proyectos) {
