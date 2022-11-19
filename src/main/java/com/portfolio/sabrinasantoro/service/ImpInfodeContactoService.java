@@ -30,11 +30,10 @@ public class ImpInfodeContactoService implements IinformaciondeContactoService {
     IInfodeContactoRepo.deleteById(id);
     }
 
-    @Override
-    public InformaciondeContacto findinformaciondeContacto(Long id) {
-    return IInfodeContactoRepo.findById(id).orElse(null);
-   
-    }
+     @Override
+    public InformaciondeContacto editInformaciondeContacto(InformaciondeContacto infodeContacto) {
+    return IInfodeContactoRepo.save(infodeContacto);
+}
     
     
 }
